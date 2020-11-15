@@ -2,12 +2,14 @@ FROM node:15.2.0-alpine3.12
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY package.json package-lock.json ./
 
-COPY server.js ./
+COPY app.js ./
 
 RUN npm install
 
+ENV NODE_ENV=production
+
 EXPOSE 80
 
-CMD [ "node", "server.js" ]
+CMD [ "node", "app.js" ]

@@ -7,8 +7,6 @@ services:
       context: ./
       dockerfile: Dockerfile
     restart: unless-stopped
-    environment: 
-      - NODE_ENV=production
     labels:
             - "traefik.enable=true"
             - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
@@ -19,14 +17,8 @@ services:
             - "traefik.http.routers.plebs-secure.tls=true"
             - "traefik.http.routers.plebs-secure.tls.certresolver=myresolver"
             - "traefik.docker.network=traefik-proxy"
-    volumes: 
-      - files:/app/
     networks:
       - traefik-proxy
-
-
-volumes: 
-  files:
 
 networks: 
   traefik-proxy:
