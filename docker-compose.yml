@@ -7,16 +7,18 @@ services:
       context: ./
       dockerfile: Dockerfile
     restart: unless-stopped
+    environment:
+      - NODE_ENV=production
     labels:
-            - "traefik.enable=true"
-            - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
-            - "traefik.http.routers.plebs.middlewares=redirect-to-https"
-            - "traefik.http.routers.plebs.rule=Host(`node.freechampionrotations.com`)"
-            - "traefik.http.routers.plebs.entrypoints=web"
-            - "traefik.http.routers.plebs-secure.rule=Host(`node.freechampionrotations.com`)"
-            - "traefik.http.routers.plebs-secure.tls=true"
-            - "traefik.http.routers.plebs-secure.tls.certresolver=myresolver"
-            - "traefik.docker.network=traefik-proxy"
+      - "traefik.enable=true"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+      - "traefik.http.routers.lysmiljo.middlewares=redirect-to-https"
+      - "traefik.http.routers.node.rule=Host(`node.freechampionrotations.com`)"
+      - "traefik.http.routers.node.entrypoints=web"
+      - "traefik.http.routers.node-secure.rule=Host(`node.freechampionrotations.com`)"
+      - "traefik.http.routers.node-secure.tls=true"
+      - "traefik.http.routers.node-secure.tls.certresolver=myresolver"
+      - "traefik.docker.network=traefik-proxy"
     networks:
       - traefik-proxy
 
