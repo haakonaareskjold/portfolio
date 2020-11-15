@@ -1,0 +1,31 @@
+version: "3.8"
+
+services: 
+
+  Node:
+    build: 
+      context: ./
+      dockerfile: dockerfile
+    restart: unless-stopped
+    labels:
+            - "traefik.enable=true"
+            - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+            - "traefik.http.routers.plebs.middlewares=redirect-to-https"
+            - "traefik.http.routers.plebs.rule=Host(`node.freechampionrotations.com`)"
+            - "traefik.http.routers.plebs.entrypoints=web"
+            - "traefik.http.routers.plebs-secure.rule=Host(`node.freechampionrotations.com`)"
+            - "traefik.http.routers.plebs-secure.tls=true"
+            - "traefik.http.routers.plebs-secure.tls.certresolver=myresolver"
+            - "traefik.docker.network=traefik-proxy"
+    volumes: 
+      - files: /app/
+    networks:
+      - traefik-proxy
+
+
+volumes: 
+  files:
+
+networks: 
+  traefik-proxy:
+    external: true

@@ -1,0 +1,13 @@
+{
+    "name": "docker_express",
+    "version": "1.0.0",
+    "description": "Node.JS on Docker",
+    "author": "Haakon Aareskjold",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.17"
+    }
+}
