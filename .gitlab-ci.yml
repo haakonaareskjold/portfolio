@@ -10,7 +10,7 @@ docker-build:
   before_script:
     - docker info
   script:
-    - apk --update add curl
-    - curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    - apk --update add py3-pip python3-dev libffi-dev openssl-dev gcc libc-dev make
+    - pip3 install docker-compose
     - chmod +x /usr/local/bin/docker-compose
     - docker-compose --version
