@@ -1,12 +1,14 @@
 FROM node:15.2.0-alpine3.12
 
+LABEL maintainer="Haakon"
+
 WORKDIR /app
 
-COPY package.json /app/package.json
+COPY package.json package-lock.json /app/
 
 COPY . /app
 
-RUN npm install --save express
+RUN npm install --production
 
 EXPOSE 80
 
