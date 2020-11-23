@@ -1,5 +1,5 @@
 function pipeline() {
-  return 'This is the end of the pipeliswene!';
+  return 'This is the end of the pipeline!';
 }
 
 test('string outputs: This is the end of the pipeline!', () => {
