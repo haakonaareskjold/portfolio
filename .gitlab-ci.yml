@@ -1,14 +1,56 @@
-stages:
-  - build
+image: tiangolo/docker-with-compose
 
-docker-build:
-  # Official docker image.
-  image: tiangolo/docker-with-compose
-  stage: build
-  services:
-    - docker:dind
+services:
+  - docker:dind
+
+stages:
+  - test
+  - deploy
+
+step-dev:
+stage: test
+before_script:
+    - export DYNAMIC_ENV_VAR=DEV
+only:
+    - dev
+ tags:
+    - dev
+ script:
+    - echo running tests in $DYNAMIC_ENV_VAR
+
+step-uat:
+  stage: deploy
   before_script:
-    - docker -v
-    - docker-compose --version
+    - export DYNAMIC_ENV_VAR=UAT
+  only:
+    - uat
+  tags:
+    - uat
   script:
+    - echo setting up env $DYNAMIC_ENV_VAR
     - docker-compose up -d --build
+
+step-deploy-staging:
+  stage: deploy
+  before_script:
+    - export DYNAMIC_ENV_VAR=STAGING
+  only:
+    - staging
+  tags:
+    - staging
+  script:
+    - echo setting up env $DYNAMIC_ENV_VAR
+    - docker-compose up -d --build
+
+step-deploy-production:
+  stage: deploy
+  before_script:
+    - export DYNAMIC_ENV_VAR=PRODUCTION
+  only:
+    - production
+  tags:
+    - production
+  script:
+    - echo setting up env $DYNAMIC_ENV_VAR
+    - docker-compose up -d --build
+  when: manual
