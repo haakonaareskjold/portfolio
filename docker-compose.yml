@@ -9,9 +9,3 @@ services:
     restart: unless-stopped
     ports:
       - 8000:8000
-    networks:
-      - traefik-proxy
-
-networks: 
-  traefik-proxy:
-    external: true
