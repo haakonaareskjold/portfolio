@@ -40,7 +40,7 @@ step-deploy-staging:
     - staging
   script:
     - echo setting up env $DYNAMIC_ENV_VAR
-    - docker-compose -f docker-compose.staging.yml -d --build
+    - docker-compose -f docker-compose.staging.yml up -d --build
 
 step-deploy-production:
   stage: deploy
@@ -52,5 +52,5 @@ step-deploy-production:
     - production
   script:
     - echo setting up env $DYNAMIC_ENV_VAR
-    - docker-compose -f docker-compose.prod.yml -d --build
+    - docker-compose -f docker-compose.prod.yml up -d --build
   when: manual
