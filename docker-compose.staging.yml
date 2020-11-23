@@ -1,0 +1,25 @@
+version: "3.8"
+
+services: 
+
+  node:
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+      - "traefik.http.routers.staging-node.middlewares=redirect-to-https"
+      - "traefik.http.routers.staging-node.rule=Host(`staging.haakon.wtf`)"
+      - "traefik.http.routers.staging-node.entrypoints=web"
+      - "traefik.http.routers.staging-node-secure.rule=Host(`staging.haakon.wtf`)"
+      - "traefik.http.routers.staging-node-secure.tls=true"
+      - "traefik.http.routers.staging-node-secure.tls.certresolver=myresolver"
+      - "traefik.docker.network=traefik-proxy"
+    networks:
+      - traefik-proxy
+
+networks: 
+  traefik-proxy:
+    external: true
