@@ -3,14 +3,11 @@ stages:
 
 docker-build:
   # Official docker image.
-  image: docker:latest
+  image: tiangolo/docker-with-compose
   stage: build
   services:
     - docker:dind
   before_script:
     - docker info
   script:
-    - apk --update add py3-pip python3-dev libffi-dev openssl-dev gcc libc-dev make
-    - pip3 install docker-compose
-    - chmod +x /usr/local/bin/docker-compose
     - docker-compose --version
