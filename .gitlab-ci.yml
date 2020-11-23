@@ -29,7 +29,6 @@ step-uat:
   script:
     - echo setting up env $DYNAMIC_ENV_VAR
     - docker-compose up -d --build
-    - npm run test
 
 step-deploy-staging:
   stage: deploy
