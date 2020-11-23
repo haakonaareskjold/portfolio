@@ -1,6 +1,6 @@
 # docker-node-webserver
 
-[![pipeline status](https://gitlab.com/haakon36/docker-node-webserver/badges/main/pipeline.svg)](https://gitlab.com/haakon36/docker-node-webserver/-/commits/main)
+[![pipeline status](https://gitlab.com/haakon36/docker-node-webserver/badges/production/pipeline.svg)](https://gitlab.com/haakon36/docker-node-webserver/-/commits/production)
 
 ### Devops project
 
