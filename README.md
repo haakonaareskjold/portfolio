@@ -7,6 +7,8 @@ Staging status · [![pipeline status](https://gitlab.com/haakon36/docker-node-we
 UAT status · [![pipeline status](https://gitlab.com/haakon36/docker-node-webserver/badges/uat/pipeline.svg)](https://gitlab.com/haakon36/docker-node-webserver/-/commits/uat)
 
 
+Repo with CI/CD:
+https://gitlab.com/haakon36/docker-node-webserver/-/pipelines
 
 ### Devops project
 
