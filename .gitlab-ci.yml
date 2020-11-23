@@ -8,10 +8,10 @@ stages:
   - deploy
 
 step-dev:
-stage: test
-before_script:
+ stage: test
+ before_script:
     - export DYNAMIC_ENV_VAR=DEV
-only:
+ only:
     - dev
  tags:
     - dev
