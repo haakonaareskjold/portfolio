@@ -7,16 +7,8 @@ services:
       context: ./
       dockerfile: Dockerfile
     restart: unless-stopped
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
-      - "traefik.http.routers.lysmiljo.middlewares=redirect-to-https"
-      - "traefik.http.routers.node.rule=Host(`haakon.wtf`)"
-      - "traefik.http.routers.node.entrypoints=web"
-      - "traefik.http.routers.node-secure.rule=Host(`haakon.wtf`)"
-      - "traefik.http.routers.node-secure.tls=true"
-      - "traefik.http.routers.node-secure.tls.certresolver=myresolver"
-      - "traefik.docker.network=traefik-proxy"
+    ports:
+      - 8000:8000
     networks:
       - traefik-proxy
 
