@@ -1,12 +1,11 @@
 # docker-node-webserver
 
-[![pipeline status](https://gitlab.com/haakon36/docker-node-webserver/badges/production/pipeline.svg)](https://gitlab.com/haakon36/docker-node-webserver/-/commits/production)
+Production status · [![pipeline status](https://gitlab.com/haakon36/docker-node-webserver/badges/production/pipeline.svg)](https://gitlab.com/haakon36/docker-node-webserver/-/commits/production)
 
-[![pipeline status](https://gitlab.com/haakon36/docker-node-webserver/badges/staging/pipeline.svg)](https://gitlab.com/haakon36/docker-node-webserver/-/commits/staging)
+Staging status · [![pipeline status](https://gitlab.com/haakon36/docker-node-webserver/badges/staging/pipeline.svg)](https://gitlab.com/haakon36/docker-node-webserver/-/commits/staging)
 
-[![pipeline status](https://gitlab.com/haakon36/docker-node-webserver/badges/uat/pipeline.svg)](https://gitlab.com/haakon36/docker-node-webserver/-/commits/uat)
+UAT status · [![pipeline status](https://gitlab.com/haakon36/docker-node-webserver/badges/uat/pipeline.svg)](https://gitlab.com/haakon36/docker-node-webserver/-/commits/uat)
 
-[![pipeline status](https://gitlab.com/haakon36/docker-node-webserver/badges/dev/pipeline.svg)](https://gitlab.com/haakon36/docker-node-webserver/-/commits/dev)
 
 
 ### Devops project
