@@ -6,6 +6,13 @@
     <title>DevOps CI/CD</title>
 </head>
 <body>
-    <p>This is the end of the pipeline</p>
+    <h1 id="sum">Hello world</h1>
+    <script>
+      function pipeline () {
+         return 'This is the end of the pipeline!';
+      }
+    document.getElementById('sum').innerHTML = pipeline();
+    module.exports = pipeline;
+    </script>
 </body>
 </html>
