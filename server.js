@@ -9,4 +9,4 @@ app.get('/', function(req, res) {
 	    res.end(indexFile);
 });
 
-app.listen(8000);
+app.listen(80);
