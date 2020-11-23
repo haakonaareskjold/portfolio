@@ -12,4 +12,6 @@ RUN npm install --production
 
 EXPOSE 80
 
+RUN npm run test
+
 CMD [ "node", "server.js" ]
