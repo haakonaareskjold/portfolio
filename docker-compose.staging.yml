@@ -2,7 +2,7 @@ version: "3.8"
 
 services: 
 
-  node:
+  node_staging:
     build: 
       context: ./
       dockerfile: Dockerfile
