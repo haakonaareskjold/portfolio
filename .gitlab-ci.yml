@@ -11,7 +11,7 @@ stages:
 step-dev:
   stage: dev
   only:
-    - dev
+    - main
   tags:
     - dev
   script:
