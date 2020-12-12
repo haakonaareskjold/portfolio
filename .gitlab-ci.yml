@@ -4,34 +4,30 @@ services:
   - docker:dind
 
 stages:
-  - test
+  - dev
   - deploy
 
 
-step-uat:
-  stage: test
+step-dev:
+  stage: dev
   only:
-    - uat
+    - dev
   tags:
-    - uat
+    - dev
   script:
-    - docker-compose up -d --build
+    - docker-compose build
+    - docker-compose down
+    - docker-compose up -d --force-recreate
 
-step-deploy-staging:
-  stage: deploy
-  only:
-    - staging
-  tags:
-    - staging
-  script:
-    - docker-compose -f docker-compose.staging.yml up -d --build
 
-step-deploy-production:
+production:
   stage: deploy
   only:
     - production
   tags:
     - production
   script:
-    - docker-compose -f docker-compose.prod.yml up -d --build
+    - docker-compose -f docker-compose.prod.yml build
+    - docker-compose -f docker-compose.prod.yml down
+    - docker-compose -f docker-compose.prod.yml up -d --force-recreate
   when: manual
