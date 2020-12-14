@@ -3,16 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps CI/CD</title>
-</head>
-<body>
-    <h1 id="sum">Hello world</h1>
-    <script>
-      function pipeline () {
-         return 'This is the end of the pipeline!';
+    <title>Haakon</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
       }
+      .item { 
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            margin-top: 1rem;
+            justify-content: center;
+            align-self: center;
+      }
+    </style>
+  </head>
+<body>
+  <div class="flex-column">
+    <div class="col text-center justify-content-center align-self-center mt-lg-5">
+      <h1 id="sum">Hello world</h1>
+    </div>
+  </div>
+  <div class="container">
+    <div class="item mt-lg-5">
+      <h3>
+        <a href="https://isitnotgif.haakon.wtf/">IsItNotGIF</a>
+      </h3>
+      <span>A Laravel App that checks the URL you submit if it's animated or not. Intentionally made for streamers as a tool to check links made to deceive the user on the endpoint. The code requests the body and checks it for strings matching gif and mp4. Then it checks headers for MIME-type matching image/gif or video/mp4, finally it checks if the image is spoofed as an APNG (checks bytescode for specific byte-sequence). Also has a gitlab CI/CD pipeline that consists of build, testing and deployment.</span>
+    </div>
+
+
+    <div class="item mt-lg-5">
+      <h3>
+        <a href="https://chestgranted.haakon.wtf/">ChestGrantedLOL</a>
+      </h3>
+      <span>A Laravel App that displays what champions you have chest available on left this season. The app has a form where you fill in a league username and pick your designated server. Then it will fetch the required information by using Riot's Summoners-V4 API, Champion-Mastery-V4 API and Data Dragon API.</span>
+    </div>
+
+    <div class="item mt-lg-5">
+      <h3>
+        <a href="https://github.com/haakonaareskjold/CICD-pipeline">CICD-pipeline</a>
+      </h3>
+      <span>a web app in Node using ExpressJS with DIND(Docker in Docker/compose)in a simple CI/CD pipeline(Is is used for this site).</span>
+    </div>
+
+    <div class="item mt-lg-5">
+      <h3>
+        <a href="https://github.com/haakonaareskjold/NemesisReactor">Server setup (for my own linux server)</a>
+      </h3>
+      <span>docker-compose stack with traefik reverse proxy with portainer 2.0. Includes two seperate compose stacks with each their own wordpress site (nginx, database, wordpress/php-fpm). This has possibility to scale further and add more services with domains. </span>
+    </div>  
+
+    <div class="item mt-lg-5">
+      <h3>
+        <a href="https://freechampionrotations.com/">FreeChampionRotations</a>
+      </h3>
+      <span>A web app displaying the current free weekly champion rotation for League of Legends, automatically fetches new rotations and patches. </span>
+    </div>  
+
+    
+   </div>
+
+  <script>
+    function pipeline () {
+         return 'Here are some projects made by me:';
+    }
     document.getElementById('sum').innerHTML = pipeline();
     module.exports = pipeline;
-    </script>
+  </script>
 </body>
 </html>
