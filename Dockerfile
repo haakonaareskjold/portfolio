@@ -1,6 +1,4 @@
-FROM node:15.2.0-alpine3.12
-
-LABEL maintainer="Haakon"
+FROM node:15.4.0-alpine3.12
 
 WORKDIR /app
 
