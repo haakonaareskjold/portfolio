@@ -1,14 +1,15 @@
 # docker-node-webserver
 
-Production status · [![pipeline status](https://gitlab.com/haakon36/docker-node-webserver/badges/production/pipeline.svg)](https://gitlab.com/haakon36/docker-node-webserver/-/commits/production)
+Production status · 
+[![pipeline status](https://gitlab.com/haakon36/CICD-pipeline/badges/production/pipeline.svg)](https://gitlab.com/haakon36/CICD-pipeline/-/commits/production)
 
-Staging status · [![pipeline status](https://gitlab.com/haakon36/docker-node-webserver/badges/staging/pipeline.svg)](https://gitlab.com/haakon36/docker-node-webserver/-/commits/staging)
 
-UAT status · [![pipeline status](https://gitlab.com/haakon36/docker-node-webserver/badges/uat/pipeline.svg)](https://gitlab.com/haakon36/docker-node-webserver/-/commits/uat)
+Main status · [![pipeline status](https://gitlab.com/haakon36/CICD-pipeline/badges/main/pipeline.svg)](https://gitlab.com/haakon36/CICD-pipeline/-/commits/main)
+
 
 
 Repo with CI/CD:
-https://gitlab.com/haakon36/docker-node-webserver/-/pipelines
+https://gitlab.com/haakon36/CICD-pipeline/-/pipelines
 
 ### Devops project
 
