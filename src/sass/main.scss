@@ -1,8 +1,10 @@
 @import "config";
+@import "home";
+@import "menu";
 
 body {
   background-color: $primary-color;
-  color: #fff;
+  color: set-text-color($primary-color);
   height: 100vh;
   font-family: $font-stack;
   line-height: 1;
@@ -13,7 +15,7 @@ h1, h2, h3 {
 }
 
 a {
-  color: #fff;
+  color: set-text-color($primary-color);
   text-decoration: none;
 }
 
@@ -21,6 +23,7 @@ header  {
   position: fixed;
   z-index: 2;
   width: 100%;
+  display: inline-block;
 }
 
 main {
@@ -34,6 +37,7 @@ main {
 
     a {
       padding: 0.4rem;
+      @include transition-ease;
 
       &:hover {
         color: $secondary-color;
@@ -49,6 +53,5 @@ footer {
   right: 1rem;
   text-align: right;
   padding: 1rem;
-  color: #fff;
-  background-color: #ff652f;
+  color: set-text-color($primary-color);
 }
