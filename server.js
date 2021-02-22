@@ -1,12 +1,11 @@
-  
+const PORT = 3000;
 var express = require('express');
-var fs = require('fs');
 
 var app = express();
 
-app.get('/', function(req, res) {
-	    var indexFile = fs.readFileSync('./index.html');
-	    res.end(indexFile);
+app.listen(PORT, ()  => {
+	console.log(` app listening at http://localhost:${PORT}`)
 });
 
-app.listen(80);
+app.use('/', express.static('public'))
+

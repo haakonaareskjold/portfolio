@@ -2,9 +2,11 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "",
+  "private": true,
   "scripts": {
     "build": "webpack",
-    "serve": "webpack serve"
+    "serve": "webpack serve",
+    "nodemon": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +16,7 @@
   "devDependencies": {
     "css-loader": "^5.0.2",
     "html-webpack-plugin": "^5.2.0",
+    "nodemon": "^2.0.7",
     "sass": "^1.32.8",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
