@@ -36,5 +36,11 @@ module.exports = {
             template: './src/index.html',
             filename: 'index.html'
         })
-    ]
+    ],
+    devServer: {
+        contentBase: path.join(__dirname, 'public'),
+        compress: true,
+        port: 9000,
+        historyApiFallback: true
+    }
 };
