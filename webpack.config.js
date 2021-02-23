@@ -35,6 +35,11 @@ module.exports = {
             inject: 'body',
             template: './src/index.html',
             filename: 'index.html'
+        }),
+        new HtmlWebpackPlugin({
+            inject: 'body',
+            template: './src/about.html',
+            filename: 'about.html'
         })
     ],
     devServer: {
