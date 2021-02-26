@@ -1,5 +1,5 @@
 .about {
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 
     &__bio-image {
         height: 20vh;
@@ -10,7 +10,7 @@
         justify-content: flex-end;
 
         p {
-            margin-block-end: 2rem;
+            margin-top: 1rem;
         }
     }
 
@@ -23,12 +23,22 @@
         }
     }
 
+
     .jobs {
         width: 60vw;
         margin: 2rem auto 0 auto;
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-gap: 2rem;
+
+        &__titles {
+            background: lighten($primary-color, 10%);
+            padding: 0.5rem;
+            padding: 1rem;
+            border-bottom: 5px solid #fff;
+            text-align: center;
+            color: $secondary-color;
+        }
 
         &__job {
             background: lighten($primary-color, 10%);
