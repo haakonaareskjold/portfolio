@@ -1,0 +1,61 @@
+@include media-sm {
+    .home {
+        &__name {
+            font-size: 1rem;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid set-text-color($primary-color);
+        }
+    }
+}
+
+@include media-md {
+
+    .home {
+        &__name {
+            font-size: 3rem;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid set-text-color($primary-color);
+        }
+    }
+
+    .menu-btn {
+        visibility: hidden;
+    }
+    .nav {
+        visibility: visible;
+
+        .menu-nav {
+            display: block;
+            transform: translateY(0);
+            height: 100%;
+            background: transparent;
+            text-align: right;
+
+            &__item {
+                display: inline;
+                padding-right: 1.5rem;
+            }
+
+            &__link {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .about__bio {
+        font-size: 1.5rem;
+    }
+        .text-secondary {
+            font-size: 3rem;
+        }
+}
+
+@include media-lg {
+    .projects {
+        &__items {
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+}

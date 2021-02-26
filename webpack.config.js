@@ -47,6 +47,11 @@ module.exports = {
             template: './src/projects.html',
             filename: 'projects.html'
         }),
+        new HtmlWebpackPlugin({
+            inject: 'body',
+            template: './src/contact.html',
+            filename: 'contact.html'
+        }),
         new CopyPlugin({
             patterns: [
               { from: __dirname + "/src/assets", to: "assets" },
