@@ -4,7 +4,25 @@ services:
   - docker:dind
 
 stages:
+  - build
   - deploy
+
+build:
+  stage: build
+  only: 
+    - production
+  tags:
+    - production
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}-npm
+     paths:
+      - node_modules/
+
+  artifacts:
+    paths:
+      - node_modules/
+    expire_in: 1 days
+    when: always
 
 
 
