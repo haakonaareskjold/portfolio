@@ -5,9 +5,10 @@
   "private": true,
   "scripts": {
     "build": "webpack",
-    "dev": "webpack serve",
+    "serve": "webpack serve",
     "nodemon": "nodemon server.js",
-    "start": "node server.js"
+    "start": "PORT=3000 node server.js",
+    "production": "node server.js"
   },
   "author": "",
   "license": "ISC",

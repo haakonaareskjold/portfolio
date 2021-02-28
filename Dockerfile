@@ -6,7 +6,6 @@ COPY package*.json /app/
 
 COPY ./ /app/
 
-EXPOSE 3000
-
+EXPOSE 80
 
 CMD [ "node", "server.js" ]
