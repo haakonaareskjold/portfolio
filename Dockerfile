@@ -1,13 +1,15 @@
-FROM node:15.4.0-alpine3.12
+FROM node:15.10.0-alpine3.12
 
 WORKDIR /app
 
-COPY package.json package-lock.json /app/
+COPY package*.json /app/
 
-COPY . /app
+COPY ./ /app/
 
-RUN npm install --production
+RUN npm install --silent
 
-EXPOSE 80
+EXPOSE 3000
+
+RUN npm run build
 
 CMD [ "node", "server.js" ]

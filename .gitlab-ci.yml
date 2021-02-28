@@ -1,7 +1,4 @@
-image: tiangolo/docker-with-compose
-
-services:
-  - docker:dind
+image: node:15.10.0-alpine3.12
 
 stages:
   - build
@@ -10,7 +7,7 @@ stages:
 build:
   stage: build
   only: 
-    - production
+    - sass
   tags:
     - production
   cache:
@@ -18,21 +15,13 @@ build:
      paths:
       - node_modules/
 
+  script:
+    - npm install
+    - npm run build
+
   artifacts:
     paths:
       - node_modules/
+      - public/
     expire_in: 1 days
     when: always
-
-
-
-deploy:
-  stage: deploy
-  only:
-    - production
-  tags:
-    - production
-  script:
-    - docker-compose -f docker-compose.prod.yml build
-    - docker-compose -f docker-compose.prod.yml down
-    - docker-compose -f docker-compose.prod.yml up -d --force-recreate
