@@ -2,40 +2,73 @@ stages:
   - build
   - deploy
 
-build:
+build_dev:
   image: node:15.10.0-alpine3.12
   stage: build
   tags:
   - dev
   only:
-  - sass
-  # Cache the `node_modules` folder
-  # using the `npm` suffix on the key.
+  - main
   cache:
     key: ${CI_COMMIT_REF_SLUG}-npm
     paths:
       - node_modules/
 
-  # Install and compile.
   script:
       - npm install
       - npm run build
 
-  # Provide the other jobs of the pipeline with
-  # the node dependencies and the compiled assets.
+
   artifacts:
-    expire_in: 1 month
+    expire_in: 1 days
     paths:
       - node_modules/
       - public/
 
-deploy:
+deploy_dev:
   stage: deploy
-  only:
-    - sass
   tags:
     - dev
+  only:
+    - main
   image: tiangolo/docker-with-compose
   script:
     - docker-compose down
     - docker-compose up -d --force-recreate
+
+########################################################
+
+build_prod:
+  image: node:15.10.0-alpine3.12
+  stage: build
+  tags:
+  - production
+  only:
+  - production
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}-npm
+    paths:
+      - node_modules/
+
+  script:
+      - npm install
+      - npm run build
+
+
+  artifacts:
+    expire_in: 1 days
+    paths:
+      - node_modules/
+      - public/
+
+deploy_production:
+  stage: deploy
+  tags:
+    - production
+  only:
+    - production
+  image: tiangolo/docker-with-compose
+  script:
+    - docker-compose -f docker-compose.prod.yml down
+    - docker-compose -f docker-compose.prod.yml up -d --force-recreate
+  when: manual
