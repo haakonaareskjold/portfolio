@@ -1,8 +1,9 @@
-image: node:15.10.0-alpine3.12
+stages:
+  - build
+  - deploy
 
-npm:
-
-  # Same stage as `composer` so that they run in parallel.
+build:
+  image: node:15.10.0-alpine3.12
   stage: build
   tags:
   - dev
@@ -27,3 +28,14 @@ npm:
     paths:
       - node_modules/
       - public/
+
+deploy:
+  stage: deploy
+  only:
+    - sass
+  tags:
+    - dev
+  image: tiangolo/docker-with-compose
+  script:
+    - docker-compose down
+    - docker-compose up -d --force-recreate
