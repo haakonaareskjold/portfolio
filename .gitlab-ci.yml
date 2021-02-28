@@ -4,7 +4,10 @@ npm:
 
   # Same stage as `composer` so that they run in parallel.
   stage: build
-  
+  tags:
+  - dev
+  only:
+  - sass
   # Cache the `node_modules` folder
   # using the `npm` suffix on the key.
   cache:
