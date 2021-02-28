@@ -1,27 +1,26 @@
 image: node:15.10.0-alpine3.12
 
-stages:
-  - build
-  - deploy
+npm:
 
-build:
+  # Same stage as `composer` so that they run in parallel.
   stage: build
-  only: 
-    - sass
-  tags:
-    - production
+  
+  # Cache the `node_modules` folder
+  # using the `npm` suffix on the key.
   cache:
     key: ${CI_COMMIT_REF_SLUG}-npm
-     paths:
+    paths:
       - node_modules/
 
+  # Install and compile.
   script:
-    - npm install
-    - npm run build
+      - npm install
+      - npm run build
 
+  # Provide the other jobs of the pipeline with
+  # the node dependencies and the compiled assets.
   artifacts:
+    expire_in: 1 month
     paths:
       - node_modules/
       - public/
-    expire_in: 1 days
-    when: always
