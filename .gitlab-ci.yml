@@ -38,7 +38,7 @@ deploy_dev:
 
 ########################################################
 
-build_prod:
+build_production:
   image: node:15.10.0-alpine3.12
   stage: build
   tags:
@@ -55,11 +55,6 @@ build_prod:
       - npm run build
 
 
-  artifacts:
-    expire_in: 1 days
-    paths:
-      - node_modules/
-      - public/
 
 deploy_production:
   stage: deploy
