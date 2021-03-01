@@ -55,6 +55,11 @@ build_production:
       - npm run build
 
 
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - node_modules/
+      - public/
 
 deploy_production:
   stage: deploy
