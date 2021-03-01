@@ -1,5 +1,52 @@
+@include media-xs {
+    .home {
+        &__intro {
+            position: fixed;
+            left: 25%;
+        }
+
+        &__name {
+            font-size: 1rem;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid set-text-color($primary-color);
+        }
+    }
+
+    main {
+        height: 100%;
+        width: 100%;
+      
+        .social-icons {
+          position: fixed;
+          bottom: 0.5rem;
+          left: 0.5rem;
+      
+          a {
+            padding: 0.2rem;
+            @include transition-ease;
+      
+            &:hover {
+              color: $secondary-color;
+            }
+          }
+        }
+        footer {
+           position: absolute;
+           top: 0;
+           left: 0;
+           text-align: left;
+          }
+      }
+}
+
 @include media-sm {
     .home {
+        &__intro {
+            position: fixed;
+            left: 25%;
+        }
+
         &__name {
             font-size: 1rem;
             padding-bottom: 1rem;
@@ -12,6 +59,7 @@
 @include media-md {
 
     .home {
+        
         &__name {
             font-size: 3rem;
             padding-bottom: 1rem;
