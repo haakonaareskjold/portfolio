@@ -1,4 +1,25 @@
 @include media-xs {
+    .about {
+
+        .social-icons {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-left: 1rem;
+        }
+
+        .jobs {
+            grid-template-columns: 1fr;
+            grid-gap: 1rem;
+
+            &__titles {
+                display: none;
+            }
+        }
+    }
+
     .home {
         &__intro {
             position: fixed;
@@ -12,10 +33,12 @@
             border-bottom: 2px solid set-text-color($primary-color);
         }
     }
+    
 
     main {
         height: 100%;
         width: 100%;
+    
       
         .social-icons {
           position: fixed;
@@ -37,10 +60,35 @@
            left: 0;
            text-align: left;
           }
-      }
+    }
 }
-
 @include media-sm {
+    .about {
+        &__bio-image {
+            margin-top: 3rem;
+            font-size: 1em;
+            padding: 10px 1rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-left: 1rem;
+        }
+
+        .jobs {
+            grid-template-columns: 1fr;
+            grid-gap: 1rem;
+
+            &__titles {
+                display: none;
+            }
+        }
+    }
+
     .home {
         &__intro {
             position: fixed;
