@@ -1,9 +1,10 @@
 .home {
-    height: 100%;
-    padding: 40vh;
-    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
     align-items: center;
     text-align: center;
+    height: 100%;
+    padding: 40vh;
 
 
     &__name {

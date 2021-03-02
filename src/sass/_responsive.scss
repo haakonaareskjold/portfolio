@@ -91,12 +91,14 @@
 
     .home {
         &__intro {
-            position: fixed;
-            left: 25%;
+            position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
         }
 
         &__name {
-            font-size: 1rem;
+            font-size: 2rem;
             padding-bottom: 1rem;
             margin-bottom: 1rem;
             border-bottom: 2px solid set-text-color($primary-color);
