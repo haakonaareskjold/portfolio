@@ -25,3 +25,6 @@ function toggleMenu() {
     showMenu = false;
   }
 }
+
+var Turbolinks = require("turbolinks")
+Turbolinks.start()

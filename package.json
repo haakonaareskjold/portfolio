@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "turbolinks": "^5.2.0"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^7.0.0",
