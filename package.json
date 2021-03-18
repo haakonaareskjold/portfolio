@@ -4,9 +4,8 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "webpack",
-    "serve": "webpack serve",
-    "start": "PORT=3000 node server.js",
+    "build": "mix --production",
+    "development": "PORT=3000 node server.js",
     "production": "node server.js"
   },
   "author": "",
